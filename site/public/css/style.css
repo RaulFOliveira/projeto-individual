@@ -123,10 +123,11 @@ body {
   color: white;
   background-image: url(.././assets/imgs/torcida-corinthians-20130410-24-original.png);
   background-size: cover;
+  background-attachment:fixed;
 }
 
 .banner .container {
-  height: 400px;
+  height: 551px;
   font-size: 36px;
   justify-content: flex-start;
   align-items: center;
@@ -189,7 +190,7 @@ body {
 /* IDOLOS */
 
 .idolos {
-  height: 650px;
+  height: 500px;
 }
 
 .idolos .container {
@@ -222,7 +223,7 @@ ol, li {
 
 .carousel {
   width: 50%;
-  height: 75%;
+  height: 65%;
   position: relative;
   margin: auto;
   /* padding-top: 75%; */
@@ -328,6 +329,7 @@ ol, li {
   background-color: rgb(121, 121, 121);
   transition: 0.5s;
 }
+
 .carousel::before,
 .carousel::after,
 .carousel__prev,
@@ -343,11 +345,11 @@ ol, li {
   outline: 0;
 }
 
-.carousel__prev:hover,
+/* .carousel__prev:hover,
 .carousel__next:hover {
   
   border: 3px solid white;
-}
+} */
 
 .carousel::before,
 .carousel__prev {
@@ -385,6 +387,7 @@ ol, li {
 
 .idolos .container .texto-idolos {
   width: 50%;
+  padding: 84px 50px;
 }
 
 /* FOOTER */
