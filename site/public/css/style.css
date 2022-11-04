@@ -75,7 +75,7 @@ body {
   height: fit-content;
   padding: 0px 0;
   color: white;
-  background-image: url(Faculdade/projeto-individual/site/public/assets/imgs/torcida-corinthians-20130410-24-original.png);
+  background-image: url(.././assets/imgs/torcida-corinthians-20130410-24-original.png);
   background-size: cover;
   background-attachment: fixed;
 }
