@@ -78,8 +78,8 @@
     <!-- COMEÇO CARROSSEL -->
     <div class="idolos">
         <div class="container">
-            <div class="carrossel">
-                <!-- <div class="slides">
+            <div class="carrossel" id="carrossel" onchange="mudou()">
+                <div class="slides">
                     <input type="radio" name="slide" id="slide1" checked>
                     <input type="radio" name="slide" id="slide2">
                     <input type="radio" name="slide" id="slide3">
@@ -107,7 +107,7 @@
                     <label class="bar" for="slide3"></label>
                     <label class="bar" for="slide4"></label>
                     <label class="bar" for="slide5"></label>
-                </div> -->
+                </div>
 
             </div>
             <div class="texto-carrossel">
@@ -156,3 +156,9 @@
 </body>
 
 </html>
+
+<script>
+    function mudou() {
+        console.log("mudou");
+    }
+</script>

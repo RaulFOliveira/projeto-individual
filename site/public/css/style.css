@@ -160,10 +160,15 @@ body {
   display: flex;
 }
 
-.container .texto-carrossel {
-  width: 50%;
-  color: white;
+.idolos .container {
   justify-content: flex-end;
+
+}
+
+.container .texto-carrossel {
+  width: 40%;
+  color: white;
+  text-align: justify;
 }
 
 .carrossel {
