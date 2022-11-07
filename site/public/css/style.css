@@ -24,7 +24,6 @@ body {
 .header {
   border-bottom: 3px solid white;
 }
-
 .header .container {
   justify-content: space-between;
 }
@@ -242,6 +241,32 @@ body {
 
 #slide5:checked~.s1 {
   margin-left: -80%;
+}
+
+/* LOCAL DE FUNDACAO */
+.fundacao {
+  background-color: white;
+  height: fit-content;
+  padding: 20px 0;
+}
+
+.fundacao .container {
+  /* border: 3px solid red; */
+  justify-content: space-between;
+}
+
+.texto-fundacao {
+  width: 50%;
+  padding: 25px;
+}
+
+.texto-fundacao p {
+  text-align: justify;
+}
+
+.mapa {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 3px;
 }
 
 /* LOGIN */
