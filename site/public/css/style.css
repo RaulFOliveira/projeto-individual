@@ -164,21 +164,35 @@ body {
 
 }
 
+.idolos .container > h1 {
+  color: white;
+}
+
 .container .texto-carrossel {
   width: 40%;
   color: white;
   text-align: justify;
 }
 
+.texto-carrossel h1 {
+  text-transform: uppercase;
+}
+
 .carrossel {
   height: 400px;
-  width: 45%;
+  /* WIDTH FACULDADE */
+  /* width: 45%;  */
+  width: 40%; 
+  /* WIDTH PC*/
   border-radius: 20px;
   overflow: hidden;
   position: absolute;
   top: 200%;
   left: 25%;
-  transform: translate(-35%, -54%);
+  /* TRANSFORM FACULDADE*/
+  /* transform: translate(-35%, -54%);  */
+  transform: translate(-31%, -233%); 
+  /* TRANSFORM PC*/
 }
 
 .nav-slides {

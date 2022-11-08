@@ -78,6 +78,7 @@
     <!-- COMEÇO CARROSSEL -->
     <div class="idolos">
         <div class="container">
+            <h1>Ídolos</h1>
             <!-- <div class="carrossel" id="carrossel" onchange="mudou()">
                 <div class="slides">
                     <input type="radio" name="slide" id="slide1" checked>
@@ -111,7 +112,7 @@
 
             </div> -->
             <div class="texto-carrossel">
-                <div class="texto-slide">
+                <div class="texto_slide" id="texto_cassio">
                     <h1>Cássio</h1>
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
@@ -123,9 +124,45 @@
                     </p>
 
                 </div>
-                <div class="texto-slide">
-                    <h1>Cássio</h1>
-                    <p class="texto-cassio">
+                <div class="texto_slide" id="texto_neto" style="display: none;">
+                    <h1>Neto</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
+                        temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
+                        corporis eaque nisi sapiente vero?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
+                        temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
+                        corporis eaque nisi sapiente vero?
+                    </p>
+
+                </div>
+                <div class="texto_slide" id="texto_socrates" style="display: none;">
+                    <h1>Sócrates</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
+                        temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
+                        corporis eaque nisi sapiente vero?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
+                        temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
+                        corporis eaque nisi sapiente vero?
+                    </p>
+
+                </div>
+                <div class="texto_slide" id="texto_rivelino" style="display: none;">
+                    <h1>Rivelino</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
+                        temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
+                        corporis eaque nisi sapiente vero?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
+                        temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
+                        corporis eaque nisi sapiente vero?
+                    </p>
+
+                </div>
+                <div class="texto_slide" id="texto_basilio" style="display: none;">
+                    <h1>Basílio</h1>
+                    <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde consequuntur dolor maiores
                         temporibus adipisci qui? Quod, libero accusamus. Iste possimus quo nesciunt molestiae fugit ex
                         corporis eaque nisi sapiente vero?
@@ -177,5 +214,45 @@
 <script>
     function mudou() {
         console.log("mudou");
+        
+        // var teste =  ;
+
+        var slideCassio = document.getElementById('slide1').checked
+        var slideNeto = document.getElementById('slide2').checked
+        var slideSocrates = document.getElementById('slide3').checked
+        var slideRivelino = document.getElementById('slide4').checked
+        var slideBasilio = document.getElementById('slide5').checked
+
+        if (slideCassio == true) {
+            texto_cassio.style.display = 'block'
+            texto_neto.style.display = 'none'
+            texto_socrates.style.display = 'none'
+            texto_rivelino.style.display = 'none'
+            texto_basilio.style.display = 'none'
+        } else if (slideNeto == true) {
+            texto_cassio.style.display = 'none'
+            texto_neto.style.display = 'block'
+            texto_socrates.style.display = 'none'
+            texto_rivelino.style.display = 'none'
+            texto_basilio.style.display = 'none'
+        } else if (slideSocrates == true) {
+            texto_cassio.style.display = 'none'
+            texto_neto.style.display = 'none'
+            texto_socrates.style.display = 'block'
+            texto_rivelino.style.display = 'none'
+            texto_basilio.style.display = 'none'
+        } else if (slideRivelino == true) {
+            texto_cassio.style.display = 'none'
+            texto_neto.style.display = 'none'
+            texto_socrates.style.display = 'none'
+            texto_rivelino.style.display = 'block'
+            texto_basilio.style.display = 'none'
+        } else if (slideBasilio == true) {
+            texto_cassio.style.display = 'none'
+            texto_neto.style.display = 'none'
+            texto_socrates.style.display = 'none'
+            texto_rivelino.style.display = 'none'
+            texto_basilio.style.display = 'block'
+        }
     }
 </script>
