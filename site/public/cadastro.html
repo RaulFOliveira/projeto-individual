@@ -69,16 +69,19 @@
                      -->
 
                     <span class="tipo_campo">Nome:</span>
-                    <input id="nome_input" type="text" placeholder="Seu nome">
+                    <input id="ipt_nome" type="text" placeholder="Seu nome">
 
+                    <span class="tipo_campo">CPF:</span>
+                    <input type="text" id="ipt_cpf" placeholder="999.999.999-99" autocomplete="off" maxlength="14" onkeyup="mascaraCPF()">
                     <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
+                    <input id="ipt_email" type="text" placeholder="exemplo123@provedor.com" onkeyup="verificarEmail()">
+                    <span id="erro"></span>
 
                     <span class="tipo_campo">Senha:</span>
-                    <input id="senha_input" type="password" placeholder="******">
+                    <input id="ipt_senha" type="password" placeholder="******">
 
                     <span class="tipo_campo">Confirmação da Senha:</span>
-                    <input id="confirmacao_senha_input" type="password" placeholder="******">
+                    <input id="ipt_confirmsenha" type="password" placeholder="******">
 
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
@@ -97,10 +100,10 @@
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por um aluno &hearts; SPTech &copy; 2022
+            <h4>O Corinthians não é só um time e uma torcida. É um estado de espírito! - Doutor Sócrates
                 <br>
                 <span class="version">
-                    v1.0.0
+                    Desenvolvido por Raul Oliveira v1.0.0
                 </span>
             </h4>
         </div>
@@ -113,15 +116,38 @@
 </html>
 
 <script>
+    function mascaraCPF() {
+        var cpf = ipt_cpf.value
+        
+        if (cpf.length == 3 || cpf.length == 7) {
+            ipt_cpf.value += '.'
+        }
+
+        if (cpf.length == 11) {
+            ipt_cpf.value += '-'
+        }
+    }
+
+    function verificarEmail() {
+        var email = ipt_email.value
+
+        if (email.indexOf('@') == -1) {
+            erro.innerHTML = 'Email inválido'
+        } else {
+            erro.innerHTML = ''
+        }
+    }
+
     function cadastrar() {
         aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var nomeVar = ipt_nome.value;
+        var cpfVar = ipt_cpf.value
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+        var confirmacaoSenhaVar = ipt_confirmsenha.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
