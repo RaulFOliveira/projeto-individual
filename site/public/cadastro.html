@@ -72,7 +72,8 @@
                     <input id="ipt_nome" type="text" placeholder="Seu nome">
 
                     <span class="tipo_campo">CPF:</span>
-                    <input type="text" id="ipt_cpf" placeholder="999.999.999-99" autocomplete="off" maxlength="14" onkeyup="mascaraCPF()">
+                    <input type="text" id="ipt_cpf" placeholder="999.999.999-99" autocomplete="off" maxlength="11"
+                        onkeyup="mascaraCPF()">
                     <span class="tipo_campo">E-mail:</span>
                     <input id="ipt_email" type="text" placeholder="exemplo123@provedor.com" onkeyup="verificarEmail()">
                     <span id="erro"></span>
@@ -109,24 +110,12 @@
         </div>
     </div>
     <!--footer fim-->
-
-
 </body>
 
 </html>
 
 <script>
-    function mascaraCPF() {
-        var cpf = ipt_cpf.value
-        
-        if (cpf.length == 3 || cpf.length == 7) {
-            ipt_cpf.value += '.'
-        }
-
-        if (cpf.length == 11) {
-            ipt_cpf.value += '-'
-        }
-    }
+    
 
     function verificarEmail() {
         var email = ipt_email.value
@@ -144,14 +133,14 @@
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = ipt_nome.value;
-        var cpfVar = ipt_cpf.value
+        var cpfVar = ipt_cpf.value;
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
         var confirmacaoSenhaVar = ipt_confirmsenha.value;
 
+        
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert(`Preencha todos os campos de entrada!`)
 
             finalizarAguardar();
             return false;
@@ -170,6 +159,7 @@
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
+                cpfServer: cpfVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -185,7 +175,7 @@
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {

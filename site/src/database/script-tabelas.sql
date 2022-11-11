@@ -7,7 +7,6 @@ idCadastro int primary key auto_increment,
 nome varchar(45) not null,
 cpf char(14) not null,
 email varchar(70) not null,
-telCel char(11) not null, 
 senha varchar(100) not null
 );
 
