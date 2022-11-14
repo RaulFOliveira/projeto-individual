@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Login</title>
+    <title>Info Timão | Login</title>
 
     <script src="./js/funcoes.js"></script>
 
@@ -26,7 +26,7 @@
         <div class="container">
             <div class="titulo">
                 <h1 class="titulo1">abcd</h1>
-                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png" alt="">
+                <img src="assets/imgs/corinthians.png" alt="Brasão do Corinthians">
                 <h1 class="titulo2">Timão</h1>
             </div>
             <ul class="navbar">
@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./simulador.html">Nossa História</a>
+                    <a href="./simulador.html">Nossos Títulos</a>
                 </li>
                 <li>|</li>
                 <li class="agora">
@@ -111,8 +111,8 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            alert(`Preencha todos os campos de entrada!`)
+
             finalizarAguardar();
             return false;
         }
