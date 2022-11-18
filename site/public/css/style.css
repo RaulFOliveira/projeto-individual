@@ -24,6 +24,7 @@ body {
 .header {
   border-bottom: 3px solid white;
 }
+
 .header .container {
   justify-content: space-between;
 }
@@ -89,7 +90,7 @@ body {
 .banner .container {
   height: 551px;
   font-size: 36px;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: center;
   background-size: cover;
 
@@ -98,7 +99,7 @@ body {
 .banner .container-form {
   height: 600px;
   font-size: 36px;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   background-size: cover;
 
@@ -169,7 +170,7 @@ body {
 
 }
 
-.idolos .container > h1 {
+.idolos .container>h1 {
   color: white;
 }
 
@@ -187,7 +188,7 @@ body {
   height: 400px;
   /* WIDTH FACULDADE */
   /* width: 45%;  */
-  width: 40%; 
+  width: 40%;
   /* WIDTH PC*/
   border-radius: 20px;
   overflow: hidden;
@@ -196,7 +197,7 @@ body {
   left: 25%;
   /* TRANSFORM FACULDADE*/
   /* transform: translate(-35%, -54%);  */
-  transform: translate(-31%, -233%); 
+  transform: translate(-31%, -233%);
   /* TRANSFORM PC*/
 }
 
@@ -260,7 +261,7 @@ body {
 
 #slide5:checked~.s1 {
   margin-left: -40%;
-  }
+}
 
 #slide6:checked~.s1 {
   margin-left: -50%;
@@ -308,129 +309,46 @@ body {
   border-radius: 3px;
 }
 
-/* LOGIN */
-
-.banner .container-form .card {
-  backdrop-filter: blur(5px);
+/* QUIZ */
+.quiz {
+  border: 3px solid red;
   height: fit-content;
-  width: 400px;
+  background-image: url('https://veja.abril.com.br/wp-content/uploads/2016/06/torcida-corinthians-20130410-24-original.jpeg?quality=70&strip=info&w=928');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.quiz .container {
+  border: 3px solid yellow;
+  background-color: black;
+  display: block;
+}
+
+.quiz-perguntas {
   display: flex;
-  flex-direction: column;
   color: white;
-  align-items: center;
-  border: 2px solid rgba(255, 255, 255);
-  border-radius: 14px;
+  margin-top: 5%;
 }
 
-.card {
-  display: flex;
-  justify-content: space-around;
+.perguntas {
+  border: 7px solid white;
+  border-radius: 7px;
+  padding: 2%;
 }
 
-.card h2 {
-  font-size: 30px;
-}
-
-.card h4 {
-  font-size: 16px;
-}
-
-.banner #div_erros_login {
-  margin-top: 15px;
-}
-
-.formulario  button {
+.perguntas button {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+  background-color: black;
+  border: 3px solid white;
+  border-radius: 10px;
   cursor: pointer;
 }
 
-/* FORMULARIO */
-.alerta_erro{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.card_erro {
-  display: none;
-  background-color: #fff;
-  color: black;
-  width: 230px;
-  position: fixed;
-  border-radius: 4px;
-  border: #e6005a 3px solid;
-  padding: 10px;
-  margin-right: 10%;
-}
-
-.card_erro #mensagem_erro{
-  font-weight: 500;
-  font-size: 20px;
-}
-
-#erro {
-  color: red;
-  font-size: 17px;
-  font-weight: 600;
-}
-
-.formulario .tipo_campo {
-  font-size: 20px;
-  font-weight: 600 !important;
-}
-
-.formulario {
-  display: flex;
-  flex-direction: column;
-}
-
-.formulario input {
-  margin-bottom: 10px;
-  border: 2px solid black;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.btn {
-  font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: white;
-  background-color: black;
-  border: 2px solid white;
-  width: 120px;
-  align-self: center;
-  margin-top: 5px;
-}
-
-.loading-div {
-  width: 50px;
-  margin: auto;
-  display: none;
-}
-
-.loading-div img {
-  height: 50px;
-  width: 50px;
-}
-
-/* FOOTER */
-.footer {
-  background-color: black;
-  border-top: 3px solid white;
-  height: 150px;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
-}
-
-.footer .container {
-  justify-content: center;
-  text-align: center;
-}
-
-.footer .container .version {
-  font-size: 12px;
+.perguntas h1 {
+  border-bottom: 3px solid white;
 }

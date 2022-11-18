@@ -10,8 +10,9 @@
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png">
+    <link rel="icon" href="assets/imgs/corinthians.png">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -25,7 +26,7 @@
     <div class="header">
         <div class="container">
             <div class="titulo">
-                <h1 class="titulo1">abcd</h1>
+                <h1 class="titulo1">Info</h1>
                 <img src="assets/imgs/corinthians.png" alt="Brasão do Corinthians">
                 <h1 class="titulo2">Timão</h1>
             </div>
@@ -90,7 +91,7 @@
             <h4>O Corinthians não é só um time e uma torcida. É um estado de espírito! - Doutor Sócrates
                 <br>
                 <span class="version">
-                    Desenvolvido por Raul Oliveira v1.0.0
+                    Desenvolvido por Raul Oliveira
                 </span>
             </h4>
         </div>
@@ -147,7 +148,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./quiz.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

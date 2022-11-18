@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Info Timão</title>
+</head>
+<body>
+    <!-- COMEÇO HEADER -->
+    <div class="header">
+        <div class="container">
+            <div class="titulo">
+                <h1 class="titulo1">Info</h1>
+                <img src="assets/imgs/corinthians.png" alt="Brasão do Corinthians">
+                <h1 class="titulo2">Timão</h1>
+            </div>
+            <ul class="navbar">
+                
+            </ul>
+        </div>
+    </div>
+    <!-- FIM HEADER -->
+
+    <div class="quiz">
+        <div class="container">
+            <div class="quiz-perguntas">
+                <div class="perguntas" id="pergunta1">
+                    <h1>Qual foi a maior goleada do Corinthians?</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sunt autem cum suscipit accusantium, sit ullam, reiciendis possimus repudiandae assumenda sint labore beatae quo placeat odit et asperiores eveniet nesciunt.</p>
+                    <button value="6x1" onclick="pgt1()" id="btn_pgt1">Corinthians 6x1 São Paulo</button>
+                    <button value="8x2" onclick="pgt1()" id="btn_pgt1">Corinthians 8x2 Cerro Porteño</button>
+                    <button value="11x0" onclick="pgt1()" id="btn_pgt1">Corinthians 11x0 Santos</button>
+                    <button value="6x0" onclick="pgt1()" id="btn_pgt1">Corinthians 6x0 Deportivo Táchira</button>
+                </div>
+                <div class="perguntas" id="pergunta2" style="display: none;">
+                    <h1>Em que ano essa camisa foi lançada?</h1>
+                    <img src="" alt="">
+                    <button value="" onclick="pgt2()" id="btn1_pgt2">2013</button>
+                    <button value="" onclick="pgt2()" id="btn2_pgt2">2014</button>
+                    <button value="" onclick="pgt2()" id="btn3_pgt2">2019</button>
+                    <button value="" onclick="pgt2()" id="btn4_pgt2">2010</button>
+                </div>
+            </div>
+            <div class="quiz-quantidade">
+                
+            </div>
+        </div>
+    </div>
+    <!-- COMEÇO FOOTER -->
+    <div class="footer">
+        <div class="container">
+            <h4>O Corinthians não é só um time e uma torcida. É um estado de espírito! - Doutor Sócrates
+                <br>
+                <span class="version">
+                    Desenvolvido por Raul Oliveira
+                </span>
+            </h4>
+        </div>
+    </div>
+    <!-- FIM FOOTER -->
+</body>
+</html>
+<script>
+    var contAcertos = 0
+    const respCertas = ["11x0"]
+
+    function pgt1() {
+        var valorBtn = document.getElementById('btn_pgt1').value.
+        
+
+        if (valorBtn == respCertas[0]) {
+            alert(valorBtn)
+            contAcertos++
+
+        } else {
+            alert(valorBtn)
+        }
+    }
+</script>
