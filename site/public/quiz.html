@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Info Timão</title>
 </head>
+
 <body>
     <!-- COMEÇO HEADER -->
     <div class="header">
@@ -17,7 +19,7 @@
                 <h1 class="titulo2">Timão</h1>
             </div>
             <ul class="navbar">
-                
+
             </ul>
         </div>
     </div>
@@ -26,13 +28,28 @@
     <div class="quiz">
         <div class="container">
             <div class="quiz-perguntas">
-                <div class="perguntas" id="pergunta1">
+                <div class="perguntas" id="pergunta1" style="display: block;">
                     <h1>Qual foi a maior goleada do Corinthians?</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sunt autem cum suscipit accusantium, sit ullam, reiciendis possimus repudiandae assumenda sint labore beatae quo placeat odit et asperiores eveniet nesciunt.</p>
-                    <button value="6x1" onclick="pgt1()" id="btn_pgt1">Corinthians 6x1 São Paulo</button>
-                    <button value="8x2" onclick="pgt1()" id="btn_pgt1">Corinthians 8x2 Cerro Porteño</button>
-                    <button value="11x0" onclick="pgt1()" id="btn_pgt1">Corinthians 11x0 Santos</button>
-                    <button value="6x0" onclick="pgt1()" id="btn_pgt1">Corinthians 6x0 Deportivo Táchira</button>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sunt autem cum suscipit
+                        accusantium, sit ullam, reiciendis possimus repudiandae assumenda sint labore beatae quo placeat
+                        odit et asperiores eveniet nesciunt.</p>
+                    <div class="alternativa">
+                        <input type="radio" name="perg1" id="1">
+                        <label for="1">Corinthians 6x1 São Paulo</label>
+                    </div>
+                    <div class="alternativa">
+                        <input type="radio" name="perg1" id="2">
+                        <label for="2">Corinthians 8x2 Cerro Porteño</label>
+                    </div>
+                    <div class="alternativa">
+                        <input type="radio" name="perg1" id="3" value="certo">
+                        <label for="3">Corinthians 11x0 Santos</label>
+                    </div>
+                    <div class="alternativa">
+                        <input type="radio" name="perg1" id="4">
+                        <label for="4">Corinthians 6x0 Deportivo Táchira</label>
+                    </div>
+                    <button onclick="pgt1()">Próxima pergunta</button>
                 </div>
                 <div class="perguntas" id="pergunta2" style="display: none;">
                     <h1>Em que ano essa camisa foi lançada?</h1>
@@ -44,7 +61,7 @@
                 </div>
             </div>
             <div class="quiz-quantidade">
-                
+
             </div>
         </div>
     </div>
@@ -61,21 +78,36 @@
     </div>
     <!-- FIM FOOTER -->
 </body>
+
 </html>
 <script>
     var contAcertos = 0
     const respCertas = ["11x0"]
 
     function pgt1() {
-        var valorBtn = document.getElementById('btn_pgt1').value.
-        
+        var teste = document.getElementsByTagName('input')
+        var erro = false
+        for (let index = 0; index < teste.length; index++) {
+            if (teste[index].type = "radio") {
+                if (teste[index].checked) {
+                    erro = true
+                    if (teste[index].value == "certo") {
+                        contAcertos++
+                        pergunta1.style.display = 'none'
+                        pergunta2.style.display = 'block'
+                    } else {
+                        pergunta1.style.display = 'none'
+                        pergunta2.style.display = 'block'
+                    }
 
-        if (valorBtn == respCertas[0]) {
-            alert(valorBtn)
-            contAcertos++
 
-        } else {
-            alert(valorBtn)
+                }
+            }
         }
+        if (erro == false) {
+            alert(`Assinale alguma alternativa`)
+        }
+
     }
+
 </script>

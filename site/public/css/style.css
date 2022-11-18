@@ -336,17 +336,12 @@ body {
   padding: 2%;
 }
 
-.perguntas button {
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  width: fit-content;
-  height: 50px;
-  padding: 5px;
-  background-color: black;
-  border: 3px solid white;
-  border-radius: 10px;
-  cursor: pointer;
+.perguntas .alternativa {
+  background-color: rgb(19, 19, 19);
+  box-shadow: 1px 2px 5px white;
+  border-radius: 5px;
+  margin: 15px 0 15px 0 ;
+  width: 300px;
 }
 
 .perguntas h1 {
