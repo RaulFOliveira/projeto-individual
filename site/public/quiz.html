@@ -30,34 +30,126 @@
             <div class="quiz-perguntas">
                 <div class="perguntas" id="pergunta1" style="display: block;">
                     <h1>Qual foi a maior goleada do Corinthians?</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sunt autem cum suscipit
-                        accusantium, sit ullam, reiciendis possimus repudiandae assumenda sint labore beatae quo placeat
-                        odit et asperiores eveniet nesciunt.</p>
-                    <div class="alternativa">
-                        <input type="radio" name="perg1" id="1">
-                        <label for="1">Corinthians 6x1 São Paulo</label>
+                    
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="1" value="Corinthians 6x1 São Paulo" onclick="pgt1()">
+                            <label for="1">Corinthians 6x1 São Paulo</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="2" value="Corinthians 8x2 Cerro Porteño" onclick="pgt1()">
+                            <label for="2">Corinthians 8x2 Cerro Porteño</label>
+                        </div>
                     </div>
-                    <div class="alternativa">
-                        <input type="radio" name="perg1" id="2">
-                        <label for="2">Corinthians 8x2 Cerro Porteño</label>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="3" value="Corinthians 11x0 Santos" onclick="pgt1()">
+                            <label for="3">Corinthians 11x0 Santos</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="4" value="Corinthians 6x0 Deportivo Táchira"
+                                onclick="pgt1()">
+                            <label for="4">Corinthians 6x0 Deportivo Táchira</label>
+                        </div>
                     </div>
-                    <div class="alternativa">
-                        <input type="radio" name="perg1" id="3" value="certo">
-                        <label for="3">Corinthians 11x0 Santos</label>
-                    </div>
-                    <div class="alternativa">
-                        <input type="radio" name="perg1" id="4">
-                        <label for="4">Corinthians 6x0 Deportivo Táchira</label>
-                    </div>
-                    <button onclick="pgt1()">Próxima pergunta</button>
                 </div>
                 <div class="perguntas" id="pergunta2" style="display: none;">
                     <h1>Em que ano essa camisa foi lançada?</h1>
-                    <img src="" alt="">
-                    <button value="" onclick="pgt2()" id="btn1_pgt2">2013</button>
-                    <button value="" onclick="pgt2()" id="btn2_pgt2">2014</button>
-                    <button value="" onclick="pgt2()" id="btn3_pgt2">2019</button>
-                    <button value="" onclick="pgt2()" id="btn4_pgt2">2010</button>
+                    <img src="https://brechodofutebol.com/wp-content/uploads/2022/02/Sem20tedtulo1_0028_Foto2017-04-2021201720422034-1.jpg-1-383x510.jpg" alt="" style="width: 30%; text-align: center;">
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="5" value="2013" onclick="pgt2()">
+                            <label for="5">2013</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="6" value="2014" onclick="pgt2()">
+                            <label for="6">2014</label>
+                        </div>
+                    </div>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="7" value="2019" onclick="pgt2()">
+                            <label for="7">2019</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="8" value="2010" onclick="pgt2()">
+                            <label for="8">2010</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="perguntas" id="pergunta3" style="display: none;">
+                    <h1>Quem é maior goleador da Neo Química Arena?</h1>
+                    
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="9" value="Jô" onclick="pgt3()">
+                            <label for="9">Jô</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="10" value="Romero" onclick="pgt3()">
+                            <label for="10">Romero</label>
+                        </div>
+                    </div>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="11" value="Guerrero" onclick="pgt3()">
+                            <label for="11">Guerrero</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="12" value="Emerson Sheik"
+                                onclick="pgt3()">
+                            <label for="12">Emerson Sheik</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="perguntas" id="pergunta4" style="display: none;">
+                    <h1>Qual o ano o Corinthians foi conhecido como "O time que não sabia perder"?</h1>
+                    
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="13" value="2012" onclick="pgt4()">
+                            <label for="13">2012</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="14" value="2015" onclick="pgt4()">
+                            <label for="14">2015</label>
+                        </div>
+                    </div>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="15" value="2017" onclick="pgt4()">
+                            <label for="15">2017</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="16" value="2011"
+                                onclick="pgt4()">
+                            <label for="16">2011</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="perguntas" id="pergunta5" style="display: none;">
+                    <h1>Quem foi o goleiro do Corinthians no Mundial de 2000?</h1>
+                    
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="17" value="Dida" onclick="pgt5()">
+                            <label for="17">Dida</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="18" value="Felipe" onclick="pgt5()">
+                            <label for="18">Felipe</label>
+                        </div>
+                    </div>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="19" value="Júlio Cesar" onclick="pgt5()">
+                            <label for="19">Júlio Cesar</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="20" value="Ronaldo Giovanelli" onclick="pgt5()">
+                            <label for="20">Ronaldo Giovanelli</label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="quiz-quantidade">
@@ -82,32 +174,116 @@
 </html>
 <script>
     var contAcertos = 0
-    const respCertas = ["11x0"]
+    const respCertas = ["Corinthians 11x0 Santos", "2013", "Jô", "2017", "Dida"]
 
     function pgt1() {
-        var teste = document.getElementsByTagName('input')
-        var erro = false
-        for (let index = 0; index < teste.length; index++) {
-            if (teste[index].type = "radio") {
-                if (teste[index].checked) {
-                    erro = true
-                    if (teste[index].value == "certo") {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value == respCertas[0]) {
+                        
                         contAcertos++
-                        pergunta1.style.display = 'none'
-                        pergunta2.style.display = 'block'
+                        console.log('Está certo')
+                        break
                     } else {
-                        pergunta1.style.display = 'none'
-                        pergunta2.style.display = 'block'
+                        console.log('Está errado')
+                        break
                     }
-
-
                 }
             }
         }
-        if (erro == false) {
-            alert(`Assinale alguma alternativa`)
-        }
+        pergunta1.style.display = 'none'
+        pergunta2.style.display = 'block'
+
 
     }
 
+    function pgt2() {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value == respCertas[1]) {
+                        
+                        contAcertos++
+                        console.log('Está certo')
+                        break
+                    } else {
+                        console.log('Está errado')
+                        break
+                    }
+                }
+            }
+        }
+        pergunta2.style.display = 'none'
+        pergunta3.style.display = 'block'
+    }
+
+    function pgt3() {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value== respCertas[2]) {
+                        contAcertos++
+                        console.log('Está certo')
+                        break
+                    } else {
+                        console.log('Está errado')
+                        break
+                    }
+                }
+            }
+        }
+        pergunta3.style.display = 'none'
+        pergunta4.style.display = 'block'
+    }
+
+    function pgt4() {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value == respCertas[3]) {
+                        
+                        contAcertos++
+                        console.log('Está certo')
+                        break
+                    } else {
+                        console.log('Está errado')
+                        break
+                    }
+                }
+            }
+        }
+        pergunta4.style.display = 'none'
+        pergunta5.style.display = 'block'
+    }
+
+    function pgt5() {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value == respCertas[4]) {
+                        
+                        contAcertos++
+                        console.log('Está certo')
+                        break
+                    } else {
+                        console.log('Está errado')
+                        break
+                    }
+                }
+            }
+        }
+        pergunta5.style.display = 'none'
+        // pergunta6.style.display = 'block'
+    }
 </script>

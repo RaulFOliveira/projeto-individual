@@ -316,34 +316,85 @@ body {
   background-image: url('https://veja.abril.com.br/wp-content/uploads/2016/06/torcida-corinthians-20130410-24-original.jpeg?quality=70&strip=info&w=928');
   background-size: cover;
   background-attachment: fixed;
+  display: flex;
 }
 
 .quiz .container {
   border: 3px solid yellow;
-  background-color: black;
-  display: block;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  
 }
 
 .quiz-perguntas {
-  display: flex;
   color: white;
-  margin-top: 5%;
+  margin: 20px;
 }
 
 .perguntas {
+  background-color: black;
   border: 7px solid white;
   border-radius: 7px;
   padding: 2%;
+  width: 1000px;
+  margin: auto;
+}
+
+.box-alternativas {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .perguntas .alternativa {
   background-color: rgb(19, 19, 19);
-  box-shadow: 1px 2px 5px white;
+  border: 2px solid rgb(224, 224, 224);
   border-radius: 5px;
   margin: 15px 0 15px 0 ;
-  width: 300px;
+  width: 350px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .perguntas h1 {
   border-bottom: 3px solid white;
+  margin-bottom: 5%;
+}
+
+.perguntas input {
+  display: none;
+}
+
+.perguntas label {
+  font-weight: 600;
+  font-size: 20px;
+  width: 100%;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.perguntas img {
+  text-align: center;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: #000000;
+  height: 150px;
+  color: #fff;
+  display: flex;
+  font-size: 15px;
+}
+
+.footer .container {
+  justify-content: center;
+  text-align: center;
+}
+
+.footer .container .version {
+  font-size: 12px;
 }
