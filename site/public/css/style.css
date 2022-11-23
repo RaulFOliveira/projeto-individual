@@ -311,16 +311,14 @@ body {
 
 /* QUIZ */
 .quiz {
-  border: 3px solid red;
   height: fit-content;
   background-image: url('https://veja.abril.com.br/wp-content/uploads/2016/06/torcida-corinthians-20130410-24-original.jpeg?quality=70&strip=info&w=928');
   background-size: cover;
   background-attachment: fixed;
-  display: flex;
+
 }
 
 .quiz .container {
-  border: 3px solid yellow;
   display: flex;
   justify-content: center;
   width: 80%;
@@ -329,7 +327,9 @@ body {
 
 .quiz-perguntas {
   color: white;
-  margin: 20px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  width: 70%;
 }
 
 .perguntas {
@@ -337,7 +337,7 @@ body {
   border: 7px solid white;
   border-radius: 7px;
   padding: 2%;
-  width: 1000px;
+  /* width: 100%; */
   margin: auto;
 }
 
