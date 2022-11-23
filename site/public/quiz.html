@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Info Timão</title>
+    <script src="../js/funcoes.js"></script>
 </head>
 
 <body>
@@ -18,9 +19,9 @@
                 <img src="assets/imgs/corinthians.png" alt="Brasão do Corinthians">
                 <h1 class="titulo2">Timão</h1>
             </div>
-            <ul class="navbar">
-
-            </ul>
+            <div class="usuario">
+                Olá, <span id="b_usuario"> usuário</span>
+            </div>
         </div>
     </div>
     <!-- FIM HEADER -->
@@ -298,6 +299,9 @@
 
 </html>
 <script>
+    var fkUsuario = sessionStorage.NOME_USUARIO;
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     var contAcertos = 0
     const respCertas = ["Corinthians 11x0 Santos", "2013", "Jô", "2017", "Dida", "Lucas Moura", "1976", "Wladimir", "2009", "Corinthians 2x2 Palmeiras", "", ""]
 

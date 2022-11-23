@@ -187,8 +187,8 @@ body {
 .carrossel {
   height: 400px;
   /* WIDTH FACULDADE */
-  /* width: 45%;  */
-  width: 40%;
+  width: 45%; 
+  /* width: 40%; */
   /* WIDTH PC*/
   border-radius: 20px;
   overflow: hidden;
@@ -196,8 +196,8 @@ body {
   top: 200%;
   left: 25%;
   /* TRANSFORM FACULDADE*/
-  /* transform: translate(-35%, -54%);  */
-  transform: translate(-31%, -233%);
+  transform: translate(-35%, -54%); 
+  /* transform: translate(-31%, -233%); */
   /* TRANSFORM PC*/
 }
 
@@ -316,6 +316,12 @@ body {
   background-size: cover;
   background-attachment: fixed;
 
+}
+
+.usuario {
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
 .quiz .container {

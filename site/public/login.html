@@ -110,6 +110,7 @@
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var idVar = sessionStorage.ID_USUARIO
 
         if (emailVar == "" || senhaVar == "") {
             alert(`Preencha todos os campos de entrada!`)
@@ -130,6 +131,7 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                idServer: idVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -145,7 +147,7 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idCadastro;
 
                     setTimeout(function () {
                         window.location = "./quiz.html";
