@@ -29,9 +29,7 @@ function entrar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
-    if (id == undefined) {
-        res.status(400).send("Seu id está undefined!");
-    } else if (email == undefined) {
+    if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");

@@ -322,6 +322,13 @@ body {
   color: white;
   display: flex;
   align-items: center;
+  font-size: 25px;
+  width: 100px;
+}
+
+#b_usuario {
+  font-weight: bold;
+  margin-left: 7px;
 }
 
 .quiz .container {

@@ -227,7 +227,7 @@
                     </div>
                 </div>
                 <div class="perguntas" id="pergunta9" style="display: none;">
-                    <h1>Em qual ano aconteceu a Invasão Corinthiana?</h1>
+                    <h1>De qual ano é essa camisa?</h1>
                     <div class="imagem" style="text-align: center;">
                         <img src="https://cdn.meutimao.com.br/_upload/camisas-do-corinthians/2009-camisa_iii_roxa.jpg"
                             alt="">
@@ -281,6 +281,64 @@
                         </div>
                     </div>
                 </div>
+                <div class="perguntas" id="pergunta11" style="display: none;">
+                    <h1>Quem é o maior artilheiro do Corinthians na Libertadores?</h1>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="41" value="Vampeta"
+                                onclick="pgt11()">
+                            <label for="41">Vampeta</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="42" value="Marcelinho Carioca"
+                                onclick="pgt11()">
+                            <label for="42">Marcelinho Carioca</label>
+                        </div>
+                    </div>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="43" value="Emerson Sheik"
+                                onclick="pgt11()">
+                            <label for="43">Emerson Sheik</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="44" value="Luizão"
+                                onclick="pgt11()">
+                            <label for="44">Luizão</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="perguntas" id="pergunta12" style="display: none;">
+                    <h1>Quanto foi o placar agregado da final da Libertadores de 2012?</h1>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="45" value="Corinthians 1x0 Boca Juniors"
+                                onclick="pgt12()">
+                            <label for="45">Corinthians 1x0 Boca Juniors</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="46" value="Corinthians 3x1 Boca Juniors"
+                                onclick="pgt12()">
+                            <label for="46">Corinthians 3x1 Boca Juniors</label>
+                        </div>
+                    </div>
+                    <div class="box-alternativas">
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="47" value="Corinthians 3x2 Boca Juniors"
+                                onclick="pgt12()">
+                            <label for="47">Corinthians 3x2 Boca Juniors</label>
+                        </div>
+                        <div class="alternativa">
+                            <input type="radio" name="pergunta" id="48" value="Corinthians 2x0 Boca Juniors"
+                                onclick="pgt12()">
+                            <label for="48">Corinthians 2x0 Boca Juniors</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="acertos" id="acertos" style="display: none;">
+
+                </div>
             </div>
         </div>
         <!-- COMEÇO FOOTER -->
@@ -303,7 +361,7 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     var contAcertos = 0
-    const respCertas = ["Corinthians 11x0 Santos", "2013", "Jô", "2017", "Dida", "Lucas Moura", "1976", "Wladimir", "2009", "Corinthians 2x2 Palmeiras", "", ""]
+    const respCertas = ["Corinthians 11x0 Santos", "2013", "Jô", "2017", "Dida", "Lucas Moura", "1976", "Wladimir", "2009", "Corinthians 2x2 Palmeiras", "Luizão", "Corinthians 3x1 Boca Juniors"]
 
     function pgt1() {
         var resp = document.getElementsByTagName('input')
@@ -523,5 +581,56 @@
         }
         pergunta10.style.display = 'none'
         pergunta11.style.display = 'block'
+    }
+    function pgt11() {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value == respCertas[10]) {
+
+                        contAcertos++
+                        console.log('Está certo')
+                        break
+                    } else {
+                        console.log('Está errado')
+                        break
+                    }
+                }
+            }
+        }
+        pergunta11.style.display = 'none'
+        pergunta12.style.display = 'block'
+    }
+    function pgt12() {
+        var resp = document.getElementsByTagName('input')
+
+        for (let index = 0; index < resp.length; index++) {
+            if (resp[index].type == "radio") {
+                if (resp[index].checked == true) {
+                    if (resp[index].value == respCertas[10]) {
+
+                        contAcertos++
+                        console.log('Está certo')
+                        break
+                    } else {
+                        console.log('Está errado')
+                        break
+                    }
+                }
+            }
+        }
+        pergunta12.style.display = 'none'
+        setTimeout(carregarQuiz,1000)
+    }
+
+    function carregarQuiz() {
+        
+        exibirAcertos()
+    }
+
+    function exibirAcertos() {
+
     }
 </script>
