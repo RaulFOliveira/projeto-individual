@@ -61,8 +61,18 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function buscarUltimaPontuacao(fkUsuario) {
 
+    instrucaoSql = `select 
+    acertos from interacao where fkUsuario= ${fkUsuario} 
+    order by idInteracao desc limit 1`;
+    
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarUltimaPontuacao
 }
