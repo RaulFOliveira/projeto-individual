@@ -257,11 +257,11 @@ body {
 }
 
 #slide4:checked~.s1 {
-  margin-left: -30%;
+  margin-left: -43.3%;
 }
 
 #slide5:checked~.s1 {
-  margin-left: -40%;
+  margin-left: -65.5%;
 }
 
 #slide6:checked~.s1 {
@@ -394,7 +394,7 @@ body {
   text-align: center;
 }
 
-.container .popup-image {
+.container .popup-image, .container-form .popup-image {
   position: fixed;
   top: 0; left: 0;
   background: rgba(0,0,0,0.5);
@@ -405,7 +405,7 @@ body {
 
 }
 
-.container .popup-image img {
+.container .popup-image img, .container-form .popup-image img{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -413,24 +413,43 @@ body {
   width: 5%;
 }
 
-.fimQuiz .container {
+.grafico {
+  background-image: url('https://veja.abril.com.br/wp-content/uploads/2016/06/torcida-corinthians-20130410-24-original.jpeg?quality=70&strip=info&w=928');
+  background-size: cover;
+  background-attachment: fixed;
+  height: fit-content;
+}
+
+.grafico .container {
+  display: flex;
+  justify-content: center;
+}
+
+.container .fimQuiz {
   background-color: rgb(19, 19, 19);
   border: 5px solid rgb(255, 255, 255);
   border-radius: 5px;
   margin: 15px 0 15px 0;
-  width: 100%;
+  width: 75%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
 }
 
 .graph {
   margin: 15px;
   border: 3px solid #e5e5e5;
   border-radius: 5px;
+  width: 55%;
+  padding: 15px;
+}
+
+#myChart {
+  width: 100%;
 }
 /* FOOTER */
 

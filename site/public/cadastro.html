@@ -88,13 +88,13 @@
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
                 </div>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/gif-aguarde.gif" id="loading-gif">
-                </div>
 
                 <!-- <div id="div_erros_login">
-
+                    
                 </div> -->
+            </div>
+            <div class="popup-image" id="modal">
+                <img src="assets/gif-aguarde.gif" alt="">
             </div>
         </div>
     </div>
@@ -116,7 +116,7 @@
 </html>
 
 <script>
-    
+
 
     function verificarEmail() {
         var email = ipt_email.value
@@ -129,7 +129,6 @@
     }
 
     function cadastrar() {
-        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -139,7 +138,7 @@
         var senhaVar = ipt_senha.value;
         var confirmacaoSenhaVar = ipt_confirmsenha.value;
 
-        
+
         if (nomeVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             alert(`Preencha todos os campos de entrada!`)
 
@@ -169,11 +168,10 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`)
 
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "1500")
+
+                aguardarModal();
+
 
                 limparFormulario();
                 finalizarAguardar();
@@ -188,6 +186,12 @@
         return false;
     }
 
+    function aguardarModal() {
+        modal.style.display = 'block'
+        setTimeout(() => {
+            window.location = "login.html";
+        }, "3000")
+    }
     function sumirMensagem() {
         cardErro.style.display = "none"
     }

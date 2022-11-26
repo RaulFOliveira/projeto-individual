@@ -5,16 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div>
-        <canvas id="myChart" style="width: 300;"></canvas>
+    <!-- COMEÇO HEADER -->
+    <div class="header">
+        <div class="container">
+            <div class="titulo">
+                <h1 class="titulo1">Info</h1>
+                <img src="assets/imgs/corinthians.png" alt="Brasão do Corinthians">
+                <h1 class="titulo2">Timão</h1>
+            </div>
+            <div class="usuario">
+                Olá, <span id="b_usuario"> usuário</span>
+            </div>
+        </div>
+    </div>
+    <!-- FIM HEADER -->
+
+    <div class="grafico">
+        <div class="container">
+            <div class="fimQuiz ">
+                <h1>Resultado do Quiz</h1>
+                <div class="graph">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-
+    <!-- COMEÇO FOOTER -->
+    <div class="footer">
+        <div class="container">
+            <h4>O Corinthians não é só um time e uma torcida. É um estado de espírito! - Doutor Sócrates
+                <br>
+                <span class="version">
+                    Desenvolvido por Raul Oliveira
+                </span>
+            </h4>
+        </div>
+    </div>
+    <!-- FIM FOOTER -->
 </body>
 
 </html>
@@ -25,16 +60,13 @@
     window.onload = obterDadosGraficos();
 
     function obterDadosGraficos() {
-        obterDadosGrafico(1)
-        obterDadosGrafico(2)
-        obterDadosGrafico(3)
-        obterDadosGrafico(4)
+        obterDadosGrafico(fkUsuario)
     }
 
     function obterDadosGrafico(fkUsuario) {
-        fetch(`/medidas/pegarPontuacao/${fkUsuario}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/acertos/buscarUltimaPontuacao/${fkUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
-                response.json().then(function(resposta) {
+                response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
@@ -47,6 +79,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+
     }
 
     function plotarGrafico(resposta, fkUsuario) {
@@ -54,22 +87,24 @@
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
-        let labels = ['Teste 1', 'Teste 2', 'Teste 3', 'Teste 4', 'Teste 5', 'Teste 6', 'Teste 7', 'Teste 8'];
+        let labels = [];
 
         // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
             datasets: [{
                 label: 'Umidade',
-                data: [15,2,41,73,32,25,32,15],
+                data: [],
                 fill: false,
+                backgroundColor: 'rgb(75, 192, 192)',
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             },
             {
                 label: 'Temperatura',
-                data: [12,5,31,21,19,40,29,50],
+                data: [],
                 fill: false,
+                backgroundColor: 'rgb(199, 52, 52)',
                 borderColor: 'rgb(199, 52, 52)',
                 tension: 0.1
             }]
@@ -81,10 +116,12 @@
 
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
+            var mediaAcertos = (Math.random() * 12).toFixed(0)
             var registro = resposta[i];
-            labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.umidade);
-            dados.datasets[1].data.push(registro.temperatura);
+            labels.push(`Tentativa ${i+1}`);
+            console.log(registro)
+            dados.datasets[0].data.push(registro.QuantidadeAcertos);
+            dados.datasets[1].data.push(mediaAcertos);
         }
 
         console.log('----------------------------------------------')
@@ -97,7 +134,7 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'bar',
             data: dados,
         };
 
