@@ -61,11 +61,11 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
-function buscarUltimaPontuacao(fkUsuario) {
+function buscarUltimaPontuacao(fkUsuario, limite_linhas) {
 
     instrucaoSql = `select 
     acertos from interacao where fkUsuario= ${fkUsuario} 
-    order by idInteracao desc limit 1`;
+    order by idInteracao desc limit ${limite_linhas}`;
     
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);

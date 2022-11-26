@@ -187,8 +187,8 @@ body {
 .carrossel {
   height: 400px;
   /* WIDTH FACULDADE */
-  width: 45%;
-  /* width: 40%; */
+  /* width: 45%; */
+  width: 40%;
   /* WIDTH PC*/
   border-radius: 20px;
   overflow: hidden;
@@ -196,8 +196,8 @@ body {
   top: 200%;
   left: 25%;
   /* TRANSFORM FACULDADE*/
-  transform: translate(-35%, -54%);
-  /* transform: translate(-31%, -233%); */
+  /* transform: translate(-35%, -54%); */
+  transform: translate(-31%, -233%);
   /* TRANSFORM PC*/
 }
 
@@ -241,6 +241,7 @@ body {
 .slide img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 #slide1:checked~.s1 {
@@ -248,11 +249,11 @@ body {
 }
 
 #slide2:checked~.s1 {
-  margin-left: -10%;
+  margin-left: -11.2%;
 }
 
 #slide3:checked~.s1 {
-  margin-left: -20%;
+  margin-left: -26.4%;
 }
 
 #slide4:checked~.s1 {
@@ -391,6 +392,25 @@ body {
 
 .perguntas img {
   text-align: center;
+}
+
+.container .popup-image {
+  position: fixed;
+  top: 0; left: 0;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+
+}
+
+.container .popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5%;
 }
 
 .fimQuiz .container {
