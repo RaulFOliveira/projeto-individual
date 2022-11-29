@@ -32,8 +32,8 @@ body {
 .header a {
   text-decoration: none;
   color: white;
-  padding: 5px;
   border-radius: 10px;
+  padding: 3px;
 }
 
 .agora {
@@ -220,19 +220,13 @@ body {
 
 .carrossel {
   height: 460px;
-  /* WIDTH FACULDADE */
-  /* width: 45%; */
-  width: 40%;
-  /* WIDTH PC*/
+  width: 45%;
   border-radius: 20px;
   overflow: hidden;
   position: absolute;
   top: 200%;
   left: 25%;
-  /* TRANSFORM FACULDADE*/
-  /* transform: translate(-35%, -54%); */
-  transform: translate(-34%, -10%);
-  /* TRANSFORM PC*/
+  transform: translate(-40%);
 }
 
 .nav-slides {
