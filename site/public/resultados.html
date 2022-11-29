@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/eca747bce0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,7 +21,11 @@
                 <h1 class="titulo2">Timão</h1>
             </div>
             <div class="usuario">
-                Olá, <span id="b_usuario"> usuário</span>
+                Olá, <span id="b_usuario">usuário</span>
+                <button class="btn-sair"><i class="fa-solid fa-angle-up"></i></button>
+                <div onclick="botao()" class="menu-sair">
+                    <p>Sair</p>
+                </div>
             </div>
         </div>
     </div>
@@ -30,10 +35,14 @@
         <div class="container">
             <div class="fimQuiz ">
                 <h1>Resultado do Quiz</h1>
+                <p>Você acertou <span id="qtdAcertos">X</span> perguntas!</p>
+
                 <div class="graph">
                     <canvas id="myChart"></canvas>
                 </div>
 
+                <p>Gostaria de fazer o quiz novamente?</p>
+                <button onclick="refazerQuiz()" class="btn-quiz">Tentar novamente</button>
             </div>
         </div>
     </div>
@@ -54,8 +63,9 @@
 
 </html>
 <script>
-
     var fkUsuario = sessionStorage.ID_USUARIO
+    var nomeUser = sessionStorage.NOME_USUARIO
+    b_usuario.innerHTML = nomeUser
 
     window.onload = obterDadosGraficos();
 
@@ -80,6 +90,21 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
+        fetch(`/acertos/buscarMediaUsuarios/${fkUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, fkUsuario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 
     function plotarGrafico(resposta, fkUsuario) {
@@ -93,7 +118,7 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Umidade',
+                label: 'Seus Acertos',
                 data: [],
                 fill: false,
                 backgroundColor: 'rgb(75, 192, 192)',
@@ -101,7 +126,7 @@
                 tension: 0.1
             },
             {
-                label: 'Temperatura',
+                label: 'Média de acertos dos usuários',
                 data: [],
                 fill: false,
                 backgroundColor: 'rgb(199, 52, 52)',
@@ -118,11 +143,13 @@
         for (i = 0; i < resposta.length; i++) {
             var mediaAcertos = (Math.random() * 12).toFixed(0)
             var registro = resposta[i];
-            labels.push(`Tentativa ${i+1}`);
+            labels.push(`Tentativa ${i + 1}`);
             console.log(registro)
             dados.datasets[0].data.push(registro.QuantidadeAcertos);
             dados.datasets[1].data.push(mediaAcertos);
         }
+
+        qtdAcertos.innerHTML = registro.QuantidadeAcertos
 
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
@@ -144,7 +171,21 @@
             config
         );
 
+    }
 
-        // setTimeout(() => atualizarGrafico(fkUsuario, dados, myChart), 2000);
+    function refazerQuiz() {
+        window.location = 'quiz.html'
+    }
+
+    const botaoSair = document.querySelector('.btn-sair')
+    const menuSair = document.querySelector('.menu-sair')
+
+    botaoSair.addEventListener('click', () => {
+        menuSair.classList.toggle('menu-sair-ativo')
+        botaoSair.style.transform = 'rotateX(180deg)'
+    })
+
+    function botao() {
+        window.location = "index.html"
     }
 </script>

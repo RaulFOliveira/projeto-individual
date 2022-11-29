@@ -1,4 +1,4 @@
-var medidaModel = require("../models/medidaModel");
+var acertosModel = require("../models/acertosModel");
 
 function buscarUltimasMedidas(req, res) {
 
@@ -8,7 +8,7 @@ function buscarUltimasMedidas(req, res) {
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas(idAquario, limite_linhas).then(function (resultado) {
+    acertosModel.buscarUltimasMedidas(idAquario, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -28,7 +28,7 @@ function buscarMedidasEmTempoReal(req, res) {
 
     console.log(`Recuperando medidas em tempo real`);
 
-    medidaModel.buscarMedidasEmTempoReal(idAquario).then(function (resultado) {
+    acertosModel.buscarMedidasEmTempoReal(idAquario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -62,8 +62,30 @@ function buscarUltimaPontuacao(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+
+function buscarMediaUsuarios(req, res) {
+
+    const limite_linhas = 7;
+
+    var fkUsuario = req.params.fkUsuario;
+
+    console.log(`Recuperando as ultimas ${limite_linhas} tentativas`);
+
+    acertosModel.buscarUltimaPontuacao(fkUsuario, limite_linhas).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    buscarUltimaPontuacao
+    buscarUltimaPontuacao,
+    buscarMediaUsuarios
 }

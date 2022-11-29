@@ -62,6 +62,8 @@ function buscarUltimaPontuacao(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+
+
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,

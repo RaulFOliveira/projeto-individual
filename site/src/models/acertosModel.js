@@ -80,6 +80,36 @@ function buscarUltimaPontuacao(fkUsuario, limite_linhas) {
                     from interacao
                     where fkUsuario = ${fkUsuario}
                     order by idInteracao desc limit ${limite_linhas}`;
+
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarMediaUsuarios(fkUsuario, limite_linhas) {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select top ${limite_linhas}
+        dht11_temperatura as temperatura, 
+        dht11_umidade as umidade,  
+                        momento,
+                        FORMAT(momento, 'HH:mm:ss') as momento_grafico
+                    from medida
+                    where fk_aquario = ${idAquario}
+                    order by id desc`;
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select 
+        truncate(avg(acertos),0) as mediaAcertos
+                    from interacao
+                    where fkUsuario <> ${fkUsuario}
+                    order by idInteracao desc limit ${limite_linhas}`;
+
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -91,5 +121,6 @@ function buscarUltimaPontuacao(fkUsuario, limite_linhas) {
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
-    buscarUltimaPontuacao
+    buscarUltimaPontuacao,
+    buscarMediaUsuarios
 }
